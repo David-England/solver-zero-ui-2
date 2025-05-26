@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from "react";
 import Button from "@/components/button/button";
 import SolutionPane from "@/components/solution-pane/solution-pane";
 
@@ -16,10 +17,12 @@ const testSudoku: Number[][] = [
 ]
 
 export default function Home() {
+  const [solution, setSolution] = useState([] as Number[][][]);
+
   return (
     <>
-      <Button callback={() => console.log("Recommendation: eat cheese.")} text={"Click me"} />
-      <SolutionPane solutionSteps={[testSudoku, testSudoku]} />
+      <Button callback={() => setSolution([...solution, testSudoku, testSudoku])} text={"Click me"} />
+      <SolutionPane solutionSteps={solution} />
     </>
   );
 }
