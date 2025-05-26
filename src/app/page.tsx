@@ -1,3 +1,5 @@
+'use client'
+
 import Button from "@/components/button/button";
 import SolutionPane from "@/components/solution-pane/solution-pane";
 
@@ -16,7 +18,7 @@ const testSudoku: Number[][] = [
 export default function Home() {
   return (
     <>
-      <Button text="Click me" />
+      <Button callback={() => console.log("Recommendation: eat cheese.")} text={"Click me"} />
       <SolutionPane solutionSteps={[testSudoku, testSudoku]} />
     </>
   );
