@@ -1,22 +1,11 @@
+import styling from './solution-pane.module.css';
 import Sudoku from "../sudoku/sudoku";
 
-const sudoku1: Number[][] = [
-    [1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [4, 4, 4, 4, 4, 4, 4, 4, 4],
-    [5, 5, 5, 5, 5, 5, 5, 5, 5],
-    [6, 6, 6, 6, 6, 6, 6, 6, 6],
-    [7, 7, 7, 7, 7, 7, 7, 7, 7],
-    [8, 8, 8, 8, 8, 8, 8, 8, 8],
-    [9, 9, 9, 9, 9, 9, 9, 9, 9],
-]
-
-export default function SolutionPane() {
+export default function SolutionPane({ solutionSteps }: { solutionSteps: Number[][][] }) {
     return (
-        <>
-            <Sudoku arr={sudoku1}></Sudoku>
-            <Sudoku arr={sudoku1}></Sudoku>
-        </>
+        <div className={styling.pane}>
+            {solutionSteps.map((step, i) =>
+            <Sudoku key={i} arr={step} />)}
+        </div>
     )
 }
