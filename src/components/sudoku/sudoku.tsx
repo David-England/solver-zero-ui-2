@@ -5,9 +5,9 @@ export default function Sudoku({ arr }: { arr: Number[][] }) {
         <div className={styling.sudoku}>
             <table>
                 <tbody>
-                    {arr.map(row =>
-                    <tr>
-                        {row.map(x => <td>{x.toString()}</td>)}
+                    {arr.map((row, rowIndex) =>
+                    <tr key={rowIndex}>
+                        {row.map((x, i) => <td key={i}>{x.toString()}</td>)}
                     </tr>)}
                 </tbody>
         </table>
