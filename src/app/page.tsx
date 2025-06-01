@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import './globals.css'
 import Button from "@/components/button/button";
 import SolutionPane from "@/components/solution-pane/solution-pane";
 
