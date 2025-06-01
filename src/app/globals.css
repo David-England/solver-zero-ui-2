@@ -1,5 +1,12 @@
 body {
   font-family: "Times New Roman";
+  margin: 8px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px 0 20px 0
 }
 
 ::selection {
