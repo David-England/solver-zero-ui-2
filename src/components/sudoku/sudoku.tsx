@@ -1,6 +1,6 @@
 import styling from './sudoku.module.css'
 
-function display(n: Number): string {
+function display(n: number): string {
     if (n === 0) {
         return "";
     }
@@ -9,7 +9,7 @@ function display(n: Number): string {
     }
 }
 
-export default function Sudoku({ arr }: { arr: Number[][] }) {
+export default function Sudoku({ arr }: { arr: number[][] }) {
     return (
         <div className={styling.sudoku}>
             <table>

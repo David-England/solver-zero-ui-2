@@ -4,7 +4,7 @@ import './globals.css'
 import Button from "@/components/button/button";
 import SolutionPane from "@/components/solution-pane/solution-pane";
 
-const testSudoku: Number[][] = [
+const testSudoku: number[][] = [
     [0, 0, 0, 0, 0, 0, 9, 0, 2],
     [0, 0, 0, 4, 0, 3, 0, 0, 0],
     [4, 7, 9, 0, 0, 0, 0, 0, 0],
@@ -16,7 +16,7 @@ const testSudoku: Number[][] = [
     [0, 8, 4, 0, 0, 0, 0, 5, 0],
 ]
 
-async function query(input: Number[][]): Promise<Number[][][]> {
+async function query(input: number[][]): Promise<number[][][]> {
   var response = await fetch("http://localhost:8081/sudoku", {
     method: "POST",
     body: JSON.stringify(testSudoku),

@@ -4,7 +4,7 @@ import { use } from 'react';
 import styling from './solution-pane.module.css';
 import Sudoku from "../sudoku/sudoku";
 
-export default function SolutionPane({ payload }: { payload: Promise<Number[][][]> }) {
+export default function SolutionPane({ payload }: { payload: Promise<number[][][]> }) {
     var solutionSteps = use(payload);
 
     return (
