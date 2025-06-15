@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import './reset.css'
 import './globals.css'
 import { query } from "./queries"
@@ -20,14 +20,21 @@ const testSudoku: number[][] = [
 ]
 
 export default function Home() {
-  var payload = query(testSudoku);
+  const [displayPane, setDisplayPane] = useState(false);
 
-  return (
-    <>
-      <Button callback={() => {}} text={"Click me"} />
-      <Suspense fallback={<p>Solution loading.... 🔃🔃🔃🔃</p>}>
-        <SolutionPane payload={payload} />
-      </Suspense>
-    </>
-  );
+  if (!displayPane) {
+    return <Button callback={() => {setDisplayPane(true)}} text={"Solve"} />;
+  }
+  else {
+    var payload = query(testSudoku);
+
+    return (
+      <>
+        <Button callback={() => {}} text={"Solve"} />
+        <Suspense fallback={<p>Solution loading.... 🔃🔃🔃🔃</p>}>
+          <SolutionPane payload={payload} />
+        </Suspense>
+      </>
+    );
+  }
 }
