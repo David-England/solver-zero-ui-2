@@ -18,7 +18,7 @@ const testSudoku: Number[][] = [
 
 async function query(input: Number[][]): Promise<Number[][][]> {
   var response = await fetch("http://localhost:8081/sudoku", {
-    method: "GET",
+    method: "POST",
     body: JSON.stringify(testSudoku),
   });
 
